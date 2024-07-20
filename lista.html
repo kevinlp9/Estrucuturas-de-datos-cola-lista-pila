@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Simple Enlazada</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Proyecto</a>
+      <nav class="navbar">
+        <a href="#" class="active">Lista</a>
+      </nav>
+    </header>
+
+    <section class="home">
+      <div id="contenedor"></div>
+      <div id="animacion" class="animacion-container"></div>
+      <div class="botones">
+        <input
+          type="text"
+          id="numero"
+          class="num"
+          placeholder="Inserte Numero"
+          name="Entrada"
+        />
+
+        <input
+          class="btn"
+          type="submit"
+          value="Insertar al Principio"
+          id="btnInsertarPrincipio"
+        />
+        <input
+          class="btn"
+          type="submit"
+          value="Insertar al Final"
+          id="btnInsertarFinal"
+        />
+        <input
+          class="btn"
+          type="submit"
+          value="Insertar en Posición"
+          id="btnInsertarPosicion"
+        />
+
+        <input
+          class="btn"
+          type="submit"
+          value="Eliminar del Principio"
+          id="btnEliminarPrincipio"
+        />
+        <input
+          class="btn"
+          type="submit"
+          value="Eliminar del Final"
+          id="btnEliminarFinal"
+        />
+        <input
+          class="btn"
+          type="submit"
+          value="Eliminar en Posición"
+          id="btnEliminarPosicion"
+        />
+        <input
+          class="btn"
+          type="submit"
+          value="Eliminar por Valor"
+          id="btnEliminarValor"
+        />
+      </div>
+      <div class="botones">
+        <input class="btn" type="submit" value="Limpiar contenedor" id="btnLimpiarLista" />
+        <input class="btn" type="submit" value="Limpiar Celda" id="btnLimpiarCelda" />
+        <input
+          class="btn"
+          type="submit"
+          value="Guardar Localmente"
+          id="btnGuardarLocalmente"
+        />
+        
+        <input
+          class="btn"
+          type="submit"
+          value="Eliminar Lista Guardada"
+          id="btnEliminarListaGuardada"
+        />
+        <select
+          class="noview"
+          id="opcionesGuardadas"
+          name=""
+          onchange="mostrarListaSeleccionada(this.value)"
+        ></select>
+      </div>
+
+      <div id="codigos-lista" class="cod-lista">
+        <h1 id="codigos-titulo-lista" class="noview codigo">Códigos en C para Lista Enlazada Simple:</h1>
+    
+        <pre id="insertar-al-principio-code" class="noview insertar-al-principio">
+            <code>
+                void insertarAlPrincipio(struct Nodo** cabeza, int nuevoDato) {
+                    struct Nodo* nuevoNodo = (struct Nodo*)malloc(sizeof(struct Nodo));
+                    nuevoNodo->dato = nuevoDato;
+                    nuevoNodo->siguiente = *cabeza;
+                    *cabeza = nuevoNodo;
+                }
+            </code>
+        </pre>
+    
+        <pre id="insertar-al-final-code" class="noview insertar-al-final">
+            <code>
+                void insertarAlFinal(struct Nodo** cabeza, int nuevoDato) {
+                    struct Nodo* nuevoNodo = (struct Nodo*)malloc(sizeof(struct Nodo));
+                    nuevoNodo->dato = nuevoDato;
+                    nuevoNodo->siguiente = NULL;
+    
+                    if (*cabeza == NULL) {
+                        *cabeza = nuevoNodo;
+                        return;
+                    }
+    
+                    struct Nodo* ultimo = *cabeza;
+                    while (ultimo->siguiente != NULL) {
+                        ultimo = ultimo->siguiente;
+                    }
+    
+                    ultimo->siguiente = nuevoNodo;
+                }
+            </code>
+        </pre>
+    
+        <pre id="insertar-por-posicion-code" class="noview insertar-por-posicion">
+            <code>
+                void insertarPorPosicion(struct Nodo** cabeza, int nuevoDato, int posicion) {
+                    // Implementa la lógica para insertar en una posición específica
+                }
+            </code>
+        </pre>
+    
+        <pre id="eliminar-del-principio-code" class="noview eliminar-del-principio">
+            <code>
+                void eliminarDelPrincipio(struct Nodo** cabeza) {
+                    if (*cabeza == NULL) {
+                        return;
+                    }
+    
+                    struct Nodo* temp = *cabeza;
+                    *cabeza = (*cabeza)->siguiente;
+                    free(temp);
+                }
+            </code>
+        </pre>
+    
+        <pre id="eliminar-del-final-code" class="noview eliminar-del-final">
+            <code>
+                void eliminarDelFinal(struct Nodo** cabeza) {
+                    if (*cabeza == NULL) {
+                        return;
+                    }
+    
+                    if ((*cabeza)->siguiente == NULL) {
+                        free(*cabeza);
+                        *cabeza = NULL;
+                        return;
+                    }
+    
+                    struct Nodo* temp = *cabeza;
+                    while (temp->siguiente->siguiente != NULL) {
+                        temp = temp->siguiente;
+                    }
+    
+                    free(temp->siguiente);
+                    temp->siguiente = NULL;
+                }
+            </code>
+        </pre>
+    
+        <pre id="eliminar-por-posicion-code" class="noview eliminar-por-posicion">
+            <code>
+                void eliminarPorPosicion(struct Nodo** cabeza, int posicion) {
+                    // Implementa la lógica para eliminar en una posición específica
+                }
+            </code>
+        </pre>
+    
+        <pre id="eliminar-por-valor-code" class="noview eliminar-por-valor">
+            <code>
+                void eliminarPorValor(struct Nodo** cabeza, int valor) {
+                    // Implementa la lógica para eliminar por valor
+                }
+            </code>
+        </pre>
+    
+    </div>
+
+    </section>
+
+    <script src="scrip2.js"></script>
+  </body>
+</html>

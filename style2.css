@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+body {
+  background-color: #1f242d;
+}
+
+input {
+  margin-top: 20px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background-color: #1f242d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.header {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+}
+
+.navbar a {
+  font-size: 1.7rem;
+  color: #fff;
+  margin-left: 4rem;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #0ef;
+}
+
+.home {
+  display: block;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.acciones-adicionales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acciones-adicionales input, .acciones-adicionales select {
+    margin: 10px 6;
+}
+
+#contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea cuando no hay suficiente espacio */
+    justify-content: center;
+  }
+
+  .hijo {
+    background-color: #0ef;
+    box-shadow: 0 0 1rem #0ef;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #1f242d;
+    border-left: 1px solid #1f242d;
+    border-right: 1px solid #1f242d;
+  }
+  
+  .hijo:last-child {
+    border-bottom: 1px solid #1f242d;
+  }
+  
+  .anim {
+  width: 60px;
+  flex-shrink: 0;
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-iteration-count: inherit;
+  animation-timing-function: linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-1350%);
+  }
+  10% {
+    transform: translateX(-1350%);
+  }
+
+  95% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.anim2 {
+  width: 60px;
+  flex-shrink: 0;
+  animation-name: fuera;
+  animation-duration: 2s;
+  animation-iteration-count: inherit;
+  animation-timing-function: linear;
+}
+
+@keyframes fuera {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+  }
+
+  95% {
+    transform: translateX(1350%);
+  }
+  100% {
+    transform: translateX(1350%);
+  }
+}
+
+.btn {
+  border: none;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #0ef;
+  border-radius: 20px;
+  box-shadow: 0 0 1rem #0ef;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 30px 20px 0 20px;
+}
+
+.btn:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.num {
+  border: none;
+  padding: 10px;
+  font-size: 10px;
+  color: #fff;
+  background-color: #323946;
+  border-radius: 5px;
+  font-weight: 700;
+  margin: 30px 20px 0 20px;
+}
+
+.noview {
+  display: none;
+}
+
+pre {
+  margin: 30px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  color: white;
+}
+
+#codigos-cola {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: white;
+  font-size: x-large;
+}
+
+#opcionesGuardadas {
+  border: none;
+  display: inline-block;
+  width: 100px;
+  padding: 5px 10px;
+  background-color: #323946;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem #0ef;
+  border: 2px solid #0ef;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 30px 20px 0 20px;
+  color: #fff;
+}

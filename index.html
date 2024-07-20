@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Proyecto</a>
+
+      <nav class="navbar">
+        <a href="#home" class="active" id="enlace-cola">Pila</a>
+        <a href="#about" id="enlace-pila">Cola</a>
+        <a href="./lista.html">Listas</a>
+      </nav>
+    </header>
+
+    <section class="home">
+      <div id="contenedor">
+        <!-- <div class="hijo anim anim2">1</div> -->
+      </div>
+
+      <div id="contenedor-cola"></div>
+
+      <div class="botones" id="botones-pila">
+        <input
+          type="text"
+          id="numero-pila"
+          class="num"
+          placeholder="Inserte Numero"
+          name="Entrada"
+        />
+
+        <input class="btn" type="submit" value="Push" id="btn1" />
+        <input class="btn" type="submit" value="Pop" id="btn2" />
+        <input class="btn" type="submit" value="Nueva pila" id="btn3" />
+        <input class="btn" type="submit" value="Guardar pila" id="btn4" />
+        <input
+          class="noview btn"
+          type="submit"
+          value="Eliminar Elementos Guardados"
+          id="btn5"
+        />
+        <select class="noview" name="" id="opciones"></select>
+      </div>
+
+      <div class="botones" id="botones-cola">
+        <input
+          type="text"
+          id="numero-cola"
+          class="num"
+          placeholder="Inserte Numero"
+          name="Entrada"
+        />
+        <input class="btn" type="submit" value="Enqueue" id="btn-enqueue" />
+        <input class="btn" type="submit" value="Dequeue" id="btn-dequeue" />
+        <input
+          class="btn"
+          type="submit"
+          value="Nueva cola"
+          id="btn-nueva-cola"
+          id="btn7"
+        />
+        <input
+          class="btn"
+          type="submit"
+          value="Guardar cola"
+          id="btn-guardar-cola"
+        />
+
+        <input
+          class="btn"
+          type="submit"
+          value="Eliminar Elementos Guardados"
+          id="borrar-cola"
+        />
+        <select class="noview" name="" id="opciones-cola">
+          <option value="vacio">----</option>
+        </select>
+      </div>
+
+      <div id="codigos-pila" class="cod-pila">
+        <h1 id="codigos-titulo-pila" class="noview codigo">Codigo en C:</h1>
+        <pre id="push-code" class="noview push">
+            <code>
+              void push(Stack *stack, int value) {
+                if (isFull(stack)) {
+                    printf("Error: La pila está llena. No se puede realizar el push.\n");
+                    return;
+                }
+            
+                stack->top++;
+                stack->items[stack->top] = value;
+            }
+            </code>
+        </pre>
+
+        <pre id="pop-code" class="noview pop">
+            <code>
+              int pop(Stack *stack) {
+                if (isEmpty(stack)) {
+                    printf("Error: La pila está vacía. No se puede realizar el pop.\n");
+                    exit(EXIT_FAILURE);
+                }
+            
+                int poppedValue = stack->items[stack->top];
+                stack->top--;
+            
+                return poppedValue;
+            }
+            </code>
+        </pre>
+      </div>
+
+      <div id="codigos-cola">
+        <h1 id="codigos-titulo" class="noview">Codigo en C:</h1>
+        <pre id="enqueue-code" class="noview">
+            <code>
+                void enqueue(int valor) {
+                    if(tope < MAX_TAM) {
+                        tope += 1;
+                        cola[tope] = valor;
+                    }
+                }
+            </code>
+        </pre>
+
+        <pre id="dequeue-code" class="noview">
+            <code>
+                void dequeue() {
+                    if(tope == -1) return; //Cola vacia
+                    else if(tope >= 0)
+                        tope -= 1;
+                }
+            </code>
+        </pre>
+      </div>
+    </section>
+
+    <script src="scrip.js"></script>
+  </body>
+</html>
